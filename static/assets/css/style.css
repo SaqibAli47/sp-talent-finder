@@ -1,0 +1,457 @@
+/* Include font family here */
+@font-face {
+    font-family: "Poppins";
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+    cursor: pointer;
+}
+button {
+    border: none;
+    outline: none;
+    background-color: unset;
+    color: #fff;
+    font-family: "poppins", sans-serif;
+    cursor: pointer;
+}
+/* root selectors */
+:root {
+    --primary-color: #181A1E;
+}
+html, body {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+    width: 100%;
+    background-color: #F9F6F2;
+}
+body {
+    height: auto;
+    overflow: hidden;
+}
+body.auto-height {
+    height: auto;
+    overflow-y: scroll;
+}
+.main-wrapper .under-maintenance-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/tf-main-bg.png') no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+}
+
+.main-tf-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+    height: 100vh;
+    z-index: 9;
+}
+.main-tf-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 39%;
+    height: 100%;
+    background: url('../img/tf-side-pattern.svg') no-repeat right center/cover;
+    opacity: 0.5;
+    z-index: 1; 
+}
+.main-tf-wrapper .hightlite-box-area{
+    padding: 30px;
+}
+.main-tf-wrapper .logo-area{
+    padding-bottom: 20px;
+}
+.hightlite-box-area .tf-heading-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.tf-heading-content h3{
+    color: var(--primary-color);
+    font-family: "Poppins", sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    font-style: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.hightlite-box-area .sub-heading-content p{
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    padding-bottom: 5px;
+    color: #4E545F;
+}
+.sub-heading-content span {
+    display: block;
+    color: #FF8000;
+    font-size: 12px;
+}
+
+/* Header humber styling */
+
+.main-wrapper .hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 20px;
+}
+.main-wrapper .hamburger, .main-wrapper .close-icon {
+    margin-right: 20px;
+}
+
+/* Align the hamburger icon to the right */
+.main-wrapper .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .main-wrapper .hamburger {
+        display: block;
+    }
+}
+
+/* !===== Prompt Page Styling Start !=== */
+.main-wrapper .main-prompt-section{
+    background-color: #F9F6F2;
+}
+.main-wrapper .prompt-page{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.main-wrapper .tf-header {
+    border-bottom: 2px solid rgb(194, 188, 188);
+    width: 100%;
+}
+.main-wrapper .tf-header .logo-area {
+    display: flex;
+    justify-content: flex-start;
+}
+.main-wrapper .tf-header .logo-area .tf-site-url{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0px 10px 10px;
+}
+.tf-header .logo-area .tf-site-url img{
+    width: 230px;
+    height: auto;
+}
+.prompt-page .main-prompt-section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+/* === Sidebar Styling Start === */
+.main-sidebar {
+    display: block;
+    max-width: 250px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+/* Mobile sidebar styles */
+@media (max-width: 768px) {
+    .main-sidebar {
+        position: fixed;
+        top: 66px;
+        left: 0;
+        height: 100%;
+        transform: translateX(-100%);
+    }
+
+    .main-sidebar.active {
+        transform: translateX(0);
+    }
+
+    /* Add overlay when sidebar is active */
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    /* Ensure main content doesn't scroll when sidebar is open */
+    body.sidebar-active {
+        overflow: hidden;
+    }
+
+    .main-prompt-section {
+        width: 100% !important;
+    }
+}
+
+.main-sidebar .tf-sidebar-area{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.top-sidebar-area .main-navbar {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.main-navbar .main-navigations{
+    margin: 5px auto;
+}
+.main-navigations .n-item{
+    margin: 20px auto;
+}
+.n-item .tf-sidebar-navigation {
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-family: "poppins", sans-serif;
+    font-weight: 500;
+}
+.n-item .tf-sidebar-navigation span{
+    margin-right: 10px;
+}
+.main-navigations .navigation-item {
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+.main-navigations .logout-area{
+    margin-top: 55vh;
+}
+.main-navigations .navigation-item:hover,
+.main-navigations .navigation-item:active,
+.main-navigations .navigation-item:focus {
+    background-color: #FF8000;
+}
+
+/* === Prompt Styling Start === */
+.main-section .main-prompt-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+.prompt-page .main-section {
+    margin-left: 0;
+    width: 100%;
+    /* height: 100%; */
+    background-color: #F9F6F2;
+    /* overflow-y: auto; */
+}
+.main-prompt-section .prompt-inside-area {
+    width: 100%;
+    /* height: 100vh; */
+    margin-top: 50px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.prompt-inside-area .main-heading{
+    font-family: "poppins", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center;
+}
+.prompt-inside-area .input-box-area {
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input-box-area form {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input-box-area form input{
+    width: 80%;
+    padding: 20px;
+    color: #FF8000;
+    caret-color: #FF8000;
+}
+.input-box-area form input::placeholder{
+    color: #FF8000;
+    font-family: "poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+.input-box-area form input:focus, .input-box-area form input:active { 
+    outline: none;
+}
+.input-box-area form .submit-btn {
+    margin: 20px;
+    padding: 10px 25px;
+    background-color:#FF8000;
+    color: #000;
+    border-radius: 10px;
+}
+.prompt-inside-area .prompt-result-box{
+    margin-bottom: 10px;
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+.prompt-result-box .question{
+    padding: 5px 0 20px 5px;
+    border-bottom: 1px solid #FF8000;
+}
+.prompt-result-box .answer {
+    padding: 5px 0 20px 5px;
+}
+.question h3,
+.answer h3 {
+    font-family: "poppins", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+.question p,
+.answer p{
+    font-family: "poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #FF8000;
+}
+
+.prompt-inside-area .prompt-result-box::-webkit-scrollbar {
+    width: 7px;
+}
+
+.prompt-inside-area .prompt-result-box::-webkit-scrollbar-track {
+    background-color: #FF8000A3;
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-bottom: 3px;
+}
+
+.prompt-inside-area .prompt-result-box::-webkit-scrollbar-thumb {
+    background: #FF8000;
+    border-radius: 20px;
+    height: 80px;
+}
+
+.prompt-inside-area .prompt-result-box::-webkit-scrollbar-thumb:hover {
+    background: #FF8000A3;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .main-sidebar {
+        display: none;
+    }
+    .main-sidebar {
+        transform: translateX(-100%); 
+        transition: transform 0.3s ease;
+    }
+    .main-sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 992px){
+    .main-prompt-section .prompt-inside-area {
+        width: 100%;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .main-navigations .logout-area {
+        margin-top: 50vh;
+    }
+    .prompt-inside-area .input-box-area {
+        margin: 6px;
+    }
+}
+
+#spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    display: none; /* Initially hidden */
+}
+.prompt-result-box .answer ol, .prompt-result-box .answer ul {
+    margin: 0 20px;
+}
+
+/* !=== Prompt Page Styling End !==== */
+
+/* utility classes */
+a, a:hover{
+    text-decoration: none;
+}
+button:active, button:focus {
+    border: none;
+    outline: none;
+}
+
+.answer ul li, .answer ol li, .answer ul li strong .answer ol li strong  {
+    color: #FF8000;
+    font-size: 12px;
+}

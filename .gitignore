@@ -1,0 +1,4 @@
+**pyc
+__pycache__/
+development.env
+.env

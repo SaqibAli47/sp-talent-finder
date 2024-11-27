@@ -1,0 +1,26 @@
+{% load static %}
+<aside class="main-sidebar" id="main_sidebar">
+    <div class="tf-sidebar-area">
+        <div class="top-sidebar-area">
+            <nav class="main-navbar">
+                <ul class="main-navigations">
+                    <li class="navigation-item n-item">
+                        <button class="tf-sidebar-navigation" id="searchCandidateBtn">
+                            <span>
+                                <img src="{% static 'assets/img/search2.svg' %}" alt="Search">
+                            </span> 
+                            Kandidaten suchen
+                        </button>
+                    </li>
+                    <li class="navigation-item n-item logout-area">
+                        <a href="{% url 'logout' %}" class="tf-sidebar-navigation logout-btn">
+                            <span>
+                                <img src="{% static 'assets/img/logout.svg' %}" alt="Log out">
+                            </span>Abmelden
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</aside>
